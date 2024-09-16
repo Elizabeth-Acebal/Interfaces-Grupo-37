@@ -2,4 +2,4 @@
 Integrantes:
 - Acebal Elizabeth Marcela.
 - Bilbao Maria Inés.
-- Toloza Peréz Esteban Maximiliano.
+- Toloza Peréz Esteban Maximiano.
