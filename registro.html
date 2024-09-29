@@ -34,9 +34,13 @@
                 <p>No soy un robot</p>
                 <iconify-icon icon="logos:recaptcha"></iconify-icon>
             </div>
-            <button type="submit">Crear cuenta</button>
+            <button type="submit" popovertarget="mydiv" >Crear cuenta</button>
             <p> ¿Ya tenes cuenta? <a href="formInicio.html">Inicia sesión</a></p> 
         </form>
+    </div>
+    <div popover id="mydiv">
+        <p>Su cuenta fue creada  con éxito.</p>
+        <button popovertarget="mydiv" popovertargetaction="hide">Cerrar</button>
     </div>
 
 

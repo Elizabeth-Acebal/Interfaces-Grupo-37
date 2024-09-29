@@ -28,12 +28,15 @@ header{
     background-color: #04182B;
     position: relative; /* Necesario para centrar el input con posición absoluta */
 }
-    
-.btn-menu{  
+header button.btn-menu {
+    background-color: transparent; /* Establece el fondo como transparente */
+    border: none; 
+    padding: 0; 
     color: #FFFFFF;
     margin: 15px;/*20px*/
     font-size: 20px; /*30px*/
-}
+} 
+
 
 header h1.logo{
     margin-top: 15px;
@@ -71,11 +74,30 @@ header div iconify-icon{
     font-size: 20px; /*30px*/
 }
 
+nav {
+    display: none; /* Nav oculto por defecto */
+    background-color:  rgba(4, 24, 43, 0.8);
+    position: absolute; /* Para que se superponga al contenido */
+    top: 50px; /* Ajusta la posición debajo del header */
+    left: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
 
+nav.active {
+    display: flex; 
+    flex-direction: column;
+}
 
-
-
-
+nav a{
+    display: flex; /* Hacer el enlace un contenedor flexible */
+    align-items: center; /* Centrar verticalmente */
+    margin-left: 10px;
+    margin-bottom: 15px; /* Espaciado entre enlaces */
+}
+nav a img{
+    width: 25px;
+    margin-right: 10px; /* Espacio entre imagen y texto */
+}
 h1{
     color: #FF00D6;
     font-family: saira;
@@ -98,12 +120,11 @@ input, select{
     opacity: 20%;
     border-radius: 10px;
 }
-
-h3 span, a{
+a{
     color:#F9F8F5;
 }
 
-.btn-suscripcion, button{
+button{
     border-radius: 20px;
     background-color:#00FFB2;
     color:#04182B;
@@ -216,6 +237,10 @@ form button{
     height: 30px;
 }
 
+
+
+
+
 footer {
     background-color:  #04182B;
     border-top: 3px solid #9700CC;
@@ -248,7 +273,7 @@ footer .footer-container   {
     margin-bottom: 10px;
 }
 
-footer a:hover {
+footer a:hover, nav a:hover {
     color:#9700CC;
 }
 
@@ -334,7 +359,7 @@ button {
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
   /* Efecto hover */
-button:hover {
+form button:hover { /*VER SI FUNCIONA AL AGREGARLE FORM*/
     background-color: #FF00D6; /* Fucsia al pasar el mouse */
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 0, 214, 0.5); /* Sombra fucsia brillante */
@@ -367,30 +392,37 @@ button.submitted {
 @media (min-width: 768px) {
     
     h1{
-        font-size: 30px; 
+        font-size: 25px; 
     }
 
-    .btn-menu{  
+    header button.btn-menu{  
         margin: 20px;/*20px*/
         font-size: 30px; /*30px*/
     }
     
+    header{
+        height: 60px;
+    }
     header div{
         margin-top: 15px;/*15px*/
     }
 
     header div input{ 
-        height: 30px;/*30px*/
+        height: 20px;/*30px*/
         margin: 0px ; /*no va en desktop*/
         padding: 8px 100px 8px 30px; /* Espacio para la lupa *//*8px 30px 8px 20px*/
     
     }
+
     .carrito{
         color: #FFFFFF;
         margin: 20px 40px 0 auto; /*  20px 40px 0 auto */
         font-size: 30px; /*30px*/
     }
 
+    nav{
+        top:60px
+    }
     h1{
         font-size: 30px; /*30px*/ 
     }
