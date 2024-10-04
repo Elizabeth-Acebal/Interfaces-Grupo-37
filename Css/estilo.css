@@ -65,13 +65,63 @@ header div iconify-icon{
     color: #FFFFFF;
     position: absolute;
     right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+   /* top: 50%;*/
+  /* transform: translateY(-50%);*/
 }
+
+.img-perfil{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin: 5px 40px 10px 50px;
+    cursor: pointer; 
+    position: relative;
+}
+
+div.container-perfil {
+    display: none; 
+    position: absolute;
+    margin-left: 800px;
+    top: calc(100% ); /* Se posiciona justo debajo de la imagen de perfil */
+    background-color:  #04182B;
+  
+    z-index: 100;
+    border-radius: 10px;
+    height: 259px;
+    width: 250px;
+    border:solid 2px #9700CC;
+}
+
+.container-perfil.visible {
+    display: flex; /* Mostrar cuando tenga la clase 'visible' */
+    flex-direction: column;
+    justify-content: center;
+ 
+
+}
+header div.container-perfil a, header div.container-perfil a iconify-icon,header div.container-perfil p{
+    font-size: 30px; 
+    color: #9700CC; 
+   
+}
+
+header div.container-perfil a iconify-icon{
+    display: inline-block; /* Esto asegura que no se comporte como texto */
+    font-size: inherit;    /* Hace que el tamaño del icono sea igual al texto */
+    left: 10px;
+    padding: 10px;
+}
+header div.container-perfil a{
+    padding: 10px;
+    margin-left: 30px;
+    align-items: center;
+}
+
+
 
 .carrito{
     color: #FFFFFF;
-    margin: 15px 25px 0 auto; /* margen superior, derecho, inferior y luego izquierdo (auto) 20px 40px 0 auto */
+    margin: 15px 0 0 auto; /* margen superior, derecho, inferior y luego izquierdo (auto) 20px 40px 0 auto */
     font-size: 20px; /*30px*/
 }
 
@@ -90,14 +140,14 @@ nav.active {
 }
 
 nav a{
-    display: flex; /* Hacer el enlace un contenedor flexible */
-    align-items: center; /* Centrar verticalmente */
+    display: flex;
     margin-left: 10px;
     margin-bottom: 15px; /* Espaciado entre enlaces */
 }
 nav a img{
     width: 25px;
     margin-right: 10px; /* Espacio entre imagen y texto */
+
 }
 a.link-home{
     color: #FF00D6;
@@ -111,9 +161,10 @@ a.link-home{
     
 }
 
-h2, h3{
+h2, h3, .container-perfil a , .container-perfil a iconify-icon{
     color:#9700CC;
 }
+
 h4{
     color: #FFFFFF;
 }
@@ -133,11 +184,7 @@ button{
     background-color:#00FFB2;
     color:#04182B;
 }
-.img-perfil{
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-}
+
 .logo{
     text-align: center;
     margin-top:3px; /*50px*/
@@ -197,6 +244,67 @@ form input{
     
 }
 /*-------------------------------JUEGO-------------------------------*/
+.breadcrumb {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .breadcrumb-item {
+    position: relative;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    margin-right: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
+  
+  .breadcrumb-item::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 15px solid #e0e0e0;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    position: absolute;
+    top: 0;
+    right: -15px;
+  }
+  
+  .breadcrumb-item a {
+    text-decoration: none;
+    color: #04182B;
+    display: flex;
+    align-items: center;
+  }
+  
+  .breadcrumb-item.active {
+    background-color: #04182B;
+    color: white;
+  }
+  
+  .breadcrumb-item.active::after {
+    border-left-color: #04182B;
+  }
+  
+  .breadcrumb-item.active a {
+    color: white;
+  }
+  
+  .breadcrumb-item.iconify-icon {
+    margin-right: 8px;
+  }
+  
+  .breadcrumb-item:last-child::after {
+    content: '';
+    border: none;
+  }
+
 .container-juego{
     display: flex;
     justify-content: center;
@@ -209,15 +317,6 @@ form input{
     border-radius: 10px;
     object-fit: cover; /* Asegura que la imagen se ajuste bien al contenedor */
 }
-
-/*.btn-play{
-    height: 160px;
-    width: 160px;
-    position: absolute;
-    border-radius: 50%;
-    margin-top: 220px;
-    background-color: rgba(0, 0, 0, 0.6)
-}*/
 
 .btn-play {
     height: 160px;
@@ -234,7 +333,7 @@ form input{
     cursor: pointer;
     transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    animation: pulse 2s infinite; /* Añadimos un pulso suave */
+    animation: pulse 2s infinite; /* Añade un pulso suave */
 }
 
 
@@ -499,17 +598,22 @@ button.submitted {
     
     }
 
+    .img-perfil{
+        height: 40px;
+        width: 40px;
+        margin: 12px 90px 10px 50px;
+    }
     .carrito{
         color: #FFFFFF;
-        margin: 20px 40px 0 auto; /*  20px 40px 0 auto */
-        font-size: 30px; /*30px*/
+        margin: 20px 20px 0 auto; 
+        font-size: 30px; 
     }
 
     nav{
         top:60px
     }
 
-    footer a:hover, span iconify-icon:hover,nav a:hover,footer .social-icons iconify-icon:hover {
+    footer a:hover, span iconify-icon:hover,nav a:hover,footer .social-icons iconify-icon:hover,  div.container-perfil a:hover {
         color: #FF00D6; 
     }
     

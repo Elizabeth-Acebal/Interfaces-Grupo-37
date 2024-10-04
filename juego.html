@@ -16,7 +16,13 @@
             <iconify-icon icon="heroicons:magnifying-glass-20-solid"></iconify-icon>
         </div>
         <iconify-icon icon="material-symbols:shopping-cart-outline" class="carrito"></iconify-icon>
-        <!-- <img src="images/perfil.jpg" alt="img-perfil" class="img-perfil">-->
+        <img src="images/perfil.jpg" alt="img-perfil" class="img-perfil" id="img-perfil">
+        <div class="container-perfil" id="container-perfil">
+            <p>Juana Gonzalez</p>
+            <a><iconify-icon icon="icon-park-solid:config"></iconify-icon></iconify-icon>Mi Cuenta</a>
+            <a><iconify-icon icon="zondicons:notification"></iconify-icon>Notificaciones</a>
+            <a><iconify-icon icon="material-symbols:logout"></iconify-icon>Cerrar Sesión</a>
+        </div>
         <nav>
             <a href=""><img src="images/icons8-new-50.png" alt="">Nuevos</a>
             <a href=""><img src="images/icons8-sparkling-48.png" alt="">Recientes</a>
@@ -35,6 +41,24 @@
             <a href=""><img src="images/icons8-adventure-94.png" alt="">Aventuras</a>
         </nav>
     </header>
+
+    <div aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#"><iconify-icon icon="carbon:home"></iconify-icon> Inicio</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#"><iconify-icon icon="mdi:gamepad-variant-outline"></iconify-icon> Juegos</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#"><iconify-icon icon="mdi:chess-king"></iconify-icon> Estrategia</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <iconify-icon icon="mdi:grid"></iconify-icon> 4 en línea
+            </li>
+        </ol>
+    </div>
+    
     <div class="container-juego">
         <img src="images/plants-vs-zombies.jpg" class="banner-juego"   alt="">
         <button class="btn-play"><iconify-icon icon="solar:play-bold"  style="color: white"></iconify-icon></button>
