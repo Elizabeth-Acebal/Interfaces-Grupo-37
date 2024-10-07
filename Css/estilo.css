@@ -369,8 +369,8 @@ form input{
     position: relative;
     max-width: 90%;
     overflow: hidden;
-    margin: 20px 50px 10px 30px;
-    padding-left: 50px;
+    margin: 10px 20px 10px 20px;
+    padding-left: 10px;
 
     
 }
@@ -379,22 +379,19 @@ form input{
     display: flex;
     transition: transform 0.5s ease-in-out; /* Animación suave */
     
-  }
-  
-  .slide {
+}
+
+.slide {
     min-width: 33.33%; /* Cada imagen ocupa un tercio del ancho del carrusel */
     box-sizing: border-box;
-    margin: 10px;
-   
+    margin: 5px;
+}
 
-   
-  }
-  
   .slide img {
     width: 100%;
     vertical-align: middle;
-    border-radius: 20px;
-    height: 300px;
+    border-radius: 10px;
+    height: 200px;
    
   }
   
@@ -410,11 +407,11 @@ form input{
   }
   
   .prev {
-    left: 60px;
+    left:20px;
   }
   
   .next {
-    right: 5px;
+    right: 0px;
   } 
 
 
@@ -678,6 +675,34 @@ button.submitted {
         width: 250px;
         
     }
+
+    .carrusel {
+        margin: 20px 50px 10px 30px;
+        padding-left: 50px; 
+    }
+
+    .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out; /* Animación suave */
+        
+    }
+
+    .slide {
+        margin: 10px;
+    }
+
+    .slide img {
+        border-radius: 20px;
+        height: 300px;
+    }
+
+    .prev {
+        left: 60px;
+    }
+    .next {
+        right: 5px;
+    } 
+    
 
     header div.container-perfil a iconify-icon{
         display: inline-block; /* Esto asegura que no se comporte como texto */
