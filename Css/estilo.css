@@ -24,10 +24,16 @@ body{
 }
 
 header{
+    position: fixed; /* Hace que el header sea fijo */
+    top: 0;          /* Asegúrate de que esté en la parte superior */
+    left: 0;         /* Asegúrate de que esté alineado a la izquierda */
+    right: 0;        /* Asegúrate de que esté alineado a la derecha */
+    
     display:flex;
     height: 50px;
+    width: 100%; /* Asegúrate de que el header ocupe todo el ancho */
     background-color: #04182B;
-    position: relative; /* Necesario para centrar el input con posición absoluta */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 header button.btn-menu {
     background-color: transparent; /* Establece el fondo como transparente */
@@ -309,6 +315,7 @@ form input{
     justify-content: center;
     margin:20px;
     position: relative;
+    margin-top: 80px;
 }
 .banner-juego, .cointainer-descripcion-juego{
     height: 600px;
@@ -369,8 +376,9 @@ form input{
     position: relative;
     max-width: 90%;
     overflow: hidden;
-    margin: 10px 20px 10px 20px;
+    margin: 60px 20px 10px 20px;
     padding-left: 10px;
+
 
     
 }
@@ -677,7 +685,7 @@ button.submitted {
     }
 
     .carrusel {
-        margin: 20px 50px 10px 30px;
+        margin: 80px 50px 10px 30px;
         padding-left: 50px; 
     }
 
