@@ -81,14 +81,13 @@ header div iconify-icon{
 div.container-perfil {
     display: none; 
     position: absolute;
-    margin-left: 800px;
-    top: calc(100% ); /* Se posiciona justo debajo de la imagen de perfil */
+    margin-left: 210px;
+    top: calc(70% ); /* Se posiciona justo debajo de la imagen de perfil */
     background-color:  #04182B;
-  
     z-index: 100;
     border-radius: 10px;
-    height: 259px;
-    width: 250px;
+    height: 210px;
+    width: 160px;
     border:solid 2px #9700CC;
 }
 
@@ -100,7 +99,7 @@ div.container-perfil {
 
 }
 header div.container-perfil a, header div.container-perfil a iconify-icon,header div.container-perfil p{
-    font-size: 30px; 
+    font-size: 20px; 
     color: #9700CC; 
    
 }
@@ -108,7 +107,7 @@ header div.container-perfil a, header div.container-perfil a iconify-icon,header
 header div.container-perfil a iconify-icon{
     display: inline-block; /* Esto asegura que no se comporte como texto */
     font-size: inherit;    /* Hace que el tamaño del icono sea igual al texto */
-    left: 10px;
+    left: 2px;
     padding: 10px;
 }
 header div.container-perfil a{
@@ -364,6 +363,65 @@ form input{
     background-color: rgba(255, 255, 255, 0.1); 
 }
 /*---------------------------------------------------------------------*/
+/*--------------------------------CARRUSEL--------------------------------*/
+
+.carrusel {
+    position: relative;
+    max-width: 90%;
+    overflow: hidden;
+    margin: 20px 50px 10px 30px;
+    padding-left: 50px;
+
+    
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Animación suave */
+    
+  }
+  
+  .slide {
+    min-width: 33.33%; /* Cada imagen ocupa un tercio del ancho del carrusel */
+    box-sizing: border-box;
+    margin: 10px;
+   
+
+   
+  }
+  
+  .slide img {
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 20px;
+    height: 300px;
+   
+  }
+  
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #9700CC; 
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .prev {
+    left: 60px;
+  }
+  
+  .next {
+    right: 5px;
+  } 
+
+
+
+  
+
+/*---------------------------------------------------------------------*/
 form p a{
     color: #FF00D6;
     opacity: 100%;
@@ -613,6 +671,24 @@ button.submitted {
         top:60px
     }
 
+    div.container-perfil {
+        margin-left: 800px;
+        top: calc(100% );
+        height: 259px;
+        width: 250px;
+        
+    }
+
+    header div.container-perfil a iconify-icon{
+        display: inline-block; /* Esto asegura que no se comporte como texto */
+        font-size: inherit;    /* Hace que el tamaño del icono sea igual al texto */
+        left: 10px;
+        padding: 10px;
+    }
+
+    header div.container-perfil a, header div.container-perfil a iconify-icon,header div.container-perfil p{
+        font-size: 30px; 
+    }
     footer a:hover, span iconify-icon:hover,nav a:hover,footer .social-icons iconify-icon:hover,  div.container-perfil a:hover {
         color: #FF00D6; 
     }
