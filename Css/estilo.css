@@ -726,5 +726,10 @@ button.submitted {
         color: #FF00D6; 
     }
     
+    /* imagenes con tamaño default*/
+    img {
+        width: 172px;
+        height: 180px;
+    }
     
 }
