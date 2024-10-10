@@ -236,6 +236,10 @@ form input{
     height: 30px;
 }
 
+.container-form-inicio{
+    margin-top: 70px;
+}
+
 .container-inicio{
     display: flex;            /* Alinea los elementos en fila */
     justify-content: flex-start; /* Alinea al lado izquierdo */
@@ -257,7 +261,7 @@ form input{
 }
 /*-------------------------------JUEGO-------------------------------*/
 .breadcrumb-container {
-    margin: 60px 20px;
+    margin: 80px 20px;
 }
 
 .breadcrumb {
@@ -290,7 +294,6 @@ form input{
 .container-juego {
     display: flex;
     justify-content: center;
-    margin:20px;
     position: relative;
  
 }
