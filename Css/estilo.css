@@ -872,9 +872,20 @@ button.submitted {
     }
     
     /* imagenes con tamaño default*/
-    /*img {
+    section img {
         width: 172px;
         height: 180px;
-    }*/
-    
+    }
+    section {
+        display: flex;
+        margin-top: 10px;
+        margin-bottom: 60px;
+        margin-left:  100px;
+        margin-right: 100px;
+    }
+
+    section div{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
 }
