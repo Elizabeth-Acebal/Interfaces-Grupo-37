@@ -9,6 +9,8 @@ COLORES
 
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     margin:0;
     padding: 0;
@@ -20,7 +22,12 @@ COLORES
 
 body{
     background-color: #04182B; 
-    font-family: saira; /*AGREGAR FUENTE*/
+    font-family: Saira, sans-serif; /*AGREGAR FUENTE*/
+    background-image: url('../images/Group.png');
+    background-size: cover; /* Hace que la imagen cubra todo el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    
 }
 
 header{
@@ -28,7 +35,6 @@ header{
     top: 0;          /* Asegúrate de que esté en la parte superior */
     left: 0;         /* Asegúrate de que esté alineado a la izquierda */
     right: 0;        /* Asegúrate de que esté alineado a la derecha */
-    
     display:flex;
     height: 50px;
     width: 100%; /* Asegúrate de que el header ocupe todo el ancho */
@@ -64,6 +70,7 @@ header div input{
     margin: 5px ; /*no va en desktop*/
     margin-left: 40px;
     padding: 5px 5px 5px 5px; /* Espacio para la lupa *//*8px 30px 8px 20px*/
+    background-color:   rgba(255, 255, 255, 0.1);
 
 }
 
@@ -249,73 +256,43 @@ form input{
     
 }
 /*-------------------------------JUEGO-------------------------------*/
+.breadcrumb-container {
+    margin: 60px 20px;
+}
+
 .breadcrumb {
-    list-style: none;
     display: flex;
-    align-items: center;
+    list-style: none;
     padding: 0;
     margin: 0;
-  }
-  
-  .breadcrumb-item {
-    position: relative;
-    padding: 10px 20px;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    margin-right: 10px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-  }
-  
-  .breadcrumb-item::after {
-    content: '';
-    width: 0;
-    height: 0;
-    border-left: 15px solid #e0e0e0;
-    border-top: 25px solid transparent;
-    border-bottom: 25px solid transparent;
-    position: absolute;
-    top: 0;
-    right: -15px;
-  }
-  
-  .breadcrumb-item a {
+}
+
+.breadcrumb li {
+    margin: 0 5px;
+}
+
+.breadcrumb li a {
     text-decoration: none;
-    color: #04182B;
-    display: flex;
-    align-items: center;
-  }
-  
-  .breadcrumb-item.active {
-    background-color: #04182B;
-    color: white;
-  }
-  
-  .breadcrumb-item.active::after {
-    border-left-color: #04182B;
-  }
-  
-  .breadcrumb-item.active a {
-    color: white;
-  }
-  
-  .breadcrumb-item.iconify-icon {
-    margin-right: 8px;
-  }
-  
-  .breadcrumb-item:last-child::after {
-    content: '';
-    border: none;
-  }
+    color: #FFFFFF; 
+    transition: color 0.3s;
+}
+
+.breadcrumb li a:hover {
+    color: #9700CC; 
+}
+
+.breadcrumb .active {
+    color: #00FFB2;
+    pointer-events: none; /* Desactivar el enlace del elemento activo */
+}
+
 
 .container-juego {
     display: flex;
     justify-content: center;
     margin:20px;
     position: relative;
-    margin-top: 80px;
+ 
 }
 .banner-juego{
     height: 600px;
@@ -356,16 +333,14 @@ form input{
     flex-direction: column;
     margin-left: 380px;
     margin-top:50px;
-
-    
-    
+    position: relative; 
 }
 
 .container-descripcion-juego div{
     justify-content: center;
     align-items: center;
     margin:10px;
-    padding:10px;
+    
 }
 
 .container-descripcion-juego h2, .container-descripcion-juego h3, .container-descripcion-juego p,h4 {
@@ -378,41 +353,82 @@ form input{
     text-transform: uppercase;
 }
 
-.btn-compartir{
+.btn-compartir {
     background-color: rgba(255, 255, 255, 0.1); 
     width: 140px;
     height: 40px;
     margin: 10px;
+    position: relative; /* Asegurarse de que el pseudo-elemento esté posicionado en relación al botón */
+    overflow: hidden; /* Para ocultar el pseudo-elemento cuando se salga del área del botón */
+    transition-duration: 0.4s;
+}
+
+.btn-compartir:after {
+    content: "";
+    background: #00FFB2;
+    display: block;
+    position: absolute;
+    width: 100%; /* Ocupa todo el ancho del botón */
+    height: 100%; /* Ocupa toda la altura del botón */
+    top: 0; /* Alinear con la parte superior del botón */
+    left: 0; /* Alinear con la parte izquierda del botón */
+    transform: scale(0); /* Inicialmente oculto usando escala */
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.4s;
+}
+
+.btn-compartir:active:after {
+    transform: scale(1); /* Escalar el pseudo-elemento para cubrir todo el botón */
+    opacity: 1;
+    transition: transform 0s, opacity 0s;
+}
+
+
+.container-img-juego {
+    position: absolute; /* Permite mover el div a cualquier lugar dentro del contenedor padre */
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    right: 10px; /* Ajusta la distancia desde la parte derecha */
+    display: flex;
+    flex-direction: column;
+}
+
+.container-descripcion-juego .container-img-juego img{
+    width: 293px;
+    height: 107px;
+}
+
+.img-descripcion-juego1{
+    border-radius: 10px 10px 0 0; 
+}
+.img-descripcion-juego2{
+    border-radius: 0 0 10px 10px; 
 }
 
 .comment-section {
-    background-color: #0A0A1A;
     padding: 20px;
     border-radius: 8px;
-    max-width: 800px;
+    width: 1133px;
     margin: 20px auto;
     color: #FFFFFF;
-    font-family: Arial, sans-serif;
-  }
-  
-  .comment-input-box {
+}
+
+.comment-input-box {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    background-color: #1A1A2E;
-    border: 2px solid #FF00D6;
+    border: 2px solid #9700CC;
+    background-color:  rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 10px;
-  }
-  
-  .comment-input-box .user-avatar {
+}
+
+.comment-input-box .img-perfil {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .comment-input-box textarea {
+    margin-left: 20px;
+}
+
+.comment-input-box textarea {
     flex: 1;
     background-color: transparent;
     border: none;
@@ -420,12 +436,16 @@ form input{
     padding: 10px;
     border-radius: 5px;
     outline: none;
-  }
-  
-  .send-button {
-    background-color: #FF00D6;
-    color: #FFFFFF;
-    border: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: white; 
+    opacity: 1; 
+}
+
+.send-button {
+    background-color: #9700CC;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -434,59 +454,66 @@ form input{
     justify-content: center;
     cursor: pointer;
     margin-left: 10px;
-  }
-  
-  .comments-list .comment {
+}
+
+.comments-list .comment, .ver-mas-btn {
     display: flex;
     align-items: flex-start;
-    background-color: #1A1A2E;
     border: 1px solid #9700CC;
+    background-color: #04182B;
     border-radius: 8px;
     padding: 10px;
     margin-bottom: 10px;
-  }
-  
-  .comment-avatar {
+}
+
+.comment-avatar {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .comment-content {
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-top:10px
+}
+
+.comment-content {
     flex: 1;
-  }
-  
-  .comment-author {
+}
+
+.comment-author {
     font-weight: bold;
     color: #00FFB2;
-  }
-  
-  .comment-text {
+    margin-top:10px;
+}
+
+.comment-text {
     margin: 5px 0;
-  }
-  
-  .comment-actions {
+}
+
+.comment-actions {
     display: flex;
     gap: 15px;
     font-size: 14px;
-  }
-  
-  .comment-actions .like,
-  .comment-actions .dislike,
-  .comment-actions .reply {
+}
+
+.comment-actions .like,
+.comment-actions .dislike,
+.comment-actions .reply {
     cursor: pointer;
     color: #FFFFFF;
-  }
-  
-  .load-more-button {
-    background: none;
-    border: none;
-    color: #00FFB2;
+    margin-top: 10px;
+}
+
+.ver-mas-btn {
+    background-color: #04182B;
+    width: 1133px;
     cursor: pointer;
-    margin: 10px 0;
+    margin: 20px 0;
     font-size: 14px;
-  }
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    
+}
 /*---------------------------------------------------------------------*/
 /*--------------------------------CARRUSEL--------------------------------*/
 
@@ -844,5 +871,10 @@ button.submitted {
         color: #FF00D6; 
     }
     
+    /* imagenes con tamaño default*/
+    /*img {
+        width: 172px;
+        height: 180px;
+    }*/
     
 }

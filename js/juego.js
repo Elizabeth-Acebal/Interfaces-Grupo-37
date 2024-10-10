@@ -6,9 +6,9 @@ document.querySelector('.send-button').addEventListener('click', () => {
       const newComment = document.createElement('article');
       newComment.classList.add('comment');
       newComment.innerHTML = `
-        <img src="user-avatar.jpg" alt="Avatar de usuario" class="comment-avatar">
+        <img src="images/perfil.jpg" alt="Avatar de usuario" class="comment-avatar">
         <div class="comment-content">
-          <p class="comment-author">Tú</p>
+          <p class="comment-author">Juana Gonzalez</p>
           <p class="comment-text">${commentText}</p>
           <div class="comment-actions">
             <span class="like">👍</span>
