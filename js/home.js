@@ -83,47 +83,47 @@ function showSlides() {
 
 
 
-//para los demas carruseles
+
 document.addEventListener('DOMContentLoaded', function() {
-  let slideIndex = 0;
-  const visibleSlides = 3; // Número de imágenes visibles a la vez
-  const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length;
-  const slideContainer = document.querySelector('.slides');
-  const prevButton = document.querySelector('.prev');
-  const nextButton = document.querySelector('.next');
+  let cardIndex = 0;
+  const visibleCards = 4; 
+  const cards = document.querySelectorAll('.card');
+  const totalCards = cards.length;
+  const cardContainer = document.querySelector('.cards');
+  const buttonMenos = document.querySelector('.btnMenos');
+  const buttonMas = document.querySelector('.btnMas');
 
-  // Mostrar las diapositivas iniciales
-  showSlides();
+  
+  showCards();
 
-  // Event listener para el botón "Anterior"
-  prevButton.addEventListener('click', function() {
-    moveSlide(-1);
+  
+  buttonMenos.addEventListener('click', function() {
+    moveCard(-1);
   });
 
-  // Event listener para el botón "Siguiente"
-  nextButton.addEventListener('click', function() {
-    moveSlide(1);
+ 
+  buttonMas.addEventListener('click', function() {
+    moveCard(1);
   });
 
-  function moveSlide(n) {
-    slideIndex += n;
+  function moveCard(n) {
+    cardIndex += n;
 
-    // Control para que el índice no se desborde
-    if (slideIndex > totalSlides - visibleSlides) {
-      slideIndex = 0;
-    } else if (slideIndex < 0) {
-      slideIndex = totalSlides - visibleSlides;
+    
+    if (cardIndex > totalCards - visibleCards) {
+      cardIndex = 0;
+    } else if (cardIndex < 0) {
+      cardIndex = totalCards - visibleCards;
     }
 
-    showSlides();
+    showCards();
   }
 
-  function showSlides() {
-    const slideWidth = slides[0].offsetWidth; // Obtener el ancho de una diapositiva
-    const offset = -(slideIndex * slideWidth); // Calcular la posición de desplazamiento
+  function showCards() {
+    const cardWidth = cards[0].offsetWidth; 
+    const offsett = -(cardIndex * cardWidth); 
 
-    slideContainer.style.transform = `translateX(${offset}px)`; // Mover las diapositivas
+    cardContainer.style.transform = `translateX(${offsett}px)`; 
   }
 });
 
