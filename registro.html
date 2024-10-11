@@ -33,10 +33,10 @@
             <a href=""><img src="images/icons8-adventure-94.png" alt="">Aventuras</a>
         </nav>
     </header>
-    <h1 class="logo">Playstorm <iconify-icon icon="mingcute:lightning-line"></iconify-icon></h1>
+    
+
     <div class="container-form">
-        
-        <form action="">
+        <form action="" id="myForm">
             <h2>CREAR CUENTA</h2>
             <label for="nombre">Nombre*</label>
             <input id="nombre" type="text" name="nombre" value="" required/>
@@ -62,11 +62,12 @@
             <button type="submit" popovertarget="mydiv" >Crear cuenta</button>
             <p> ¿Ya tenes cuenta? <a href="formInicio.html">Inicia sesión</a></p> 
         </form>
+        <div  id="mydiv" popover>
+            <p>Su cuenta fue creada  con éxito.</p>
+            <button popovertarget="mydiv">Cerrar</button>
+        </div>
     </div>
-    <div popover id="mydiv">
-        <p>Su cuenta fue creada  con éxito.</p>
-        <button popovertarget="mydiv" popovertargetaction="hide">Cerrar</button>
-    </div>
+   
     <footer>
         <h1 class="logo"><a href="home.html" class="link-home">Playstorm <iconify-icon icon="mingcute:lightning-line"></iconify-icon></a></h1>
         <div class="footer-container">
@@ -124,7 +125,7 @@
     </footer>
 
 
-
+    <script type="text/javascript" src="js/home.js"></script>
 <script type="text/javascript" src="js/registro.js"></script>
 </body>
 </html>

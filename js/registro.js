@@ -13,3 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 800); // Duración de la animación
     });
 });
+
+//para que redirija al home
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita el envío por defecto del formulario
+    window.location.href = 'home.html'; // Redirige a la página de inicio
+
+});
