@@ -327,7 +327,7 @@ form input{
     display: flex;
     justify-content: center;
     position: relative;
- 
+
 }
 .banner-juego{
     height: 600px;
@@ -570,12 +570,13 @@ textarea::placeholder {
 }
 
 .slide {
-    min-width: 33.33%; /* Cada imagen ocupa un tercio del ancho del carrusel */
+    position: relative; /* Permite posicionar elementos hijos con position: absolute */
+    min-width: 32%; /* Cada imagen ocupa un tercio del ancho del carrusel */
     box-sizing: border-box;
     margin: 5px;
 }
 
-  .slide img {
+.slide img {
     width: 100%;
     vertical-align: middle;
     border-radius: 10px;
@@ -1058,59 +1059,21 @@ button:active {
         color: #FF00D6; 
     }
     
-  
-}
-  /* imagenes con tamaño default*/
+    /* imagenes con tamaño default
     section img {
-        width: 200px;
-        height: 212px;
-       
-}
+        width: 172px;
+        height: 180px;
+    }
     section {
-        
+        display: flex;
         margin-top: 10px;
         margin-bottom: 60px;
         margin-left:  100px;
         margin-right: 100px;
-}
+    }
 
     section div{
         margin-left: 15px;
         margin-right: 15px;
+    }*/
 }
-
-.cards {
-    display: flex; 
-    overflow: hidden; 
-    width: 90%; 
-    position: relative; 
-  }
-  
-  .card {
-     
-    margin: 0 10px;
-    transition: transform 0.5s ease-in-out; 
-  }
-  
-  .btnMenos, .btnMas {
-    position: absolute;
-    top: 50%; /* Centrar verticalmente los botones */
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
-    color: white; /* Color de texto blanco */
-    border: none;
-    font-size: 30px; /* Tamaño del símbolo */
-    cursor: pointer;
-  }
-  
-  .btnMenos {
-    left: 0; 
-  }
-  
-  .btnMas {
-    right: 0; 
-  }
-  
-  .cards {
-    transition: transform 0.5s ease; 
-  }
