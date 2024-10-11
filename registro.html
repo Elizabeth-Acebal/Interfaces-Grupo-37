@@ -59,13 +59,14 @@
                 <p>No soy un robot</p>
                 <iconify-icon icon="logos:recaptcha"></iconify-icon>
             </div>
-            <button type="submit" popovertarget="mydiv" >Crear cuenta</button>
+            <button type="submit" id="submitButton" >Crear cuenta</button>
             <p> ¿Ya tenes cuenta? <a href="formInicio.html">Inicia sesión</a></p> 
         </form>
-        <div  id="mydiv" popover>
-            <p>Su cuenta fue creada  con éxito.</p>
-            <button popovertarget="mydiv">Cerrar</button>
-        </div>
+         <!-- Popover -->
+    <div id="myPopover" class="popover-content hidden">
+        <p>Su cuenta fue creada con éxito.</p>
+        <button id="closePopoverButton">Cerrar</button>
+    </div>
     </div>
    
     <footer>
@@ -124,7 +125,7 @@
         <p>Copyright © 2024 PLAYSTORM Todos los derechos reservados</p>
     </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script type="text/javascript" src="js/home.js"></script>
 <script type="text/javascript" src="js/registro.js"></script>
 </body>

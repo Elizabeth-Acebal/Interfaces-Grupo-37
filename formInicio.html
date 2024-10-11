@@ -35,7 +35,7 @@
     </header>
    
     <div class="container-form container-form-inicio">
-        <form action="home.html" method="GET" id="myForm">
+        <form action="" id="myForm">
             <p>INICIAR SESIÓN</p>
             <div class="container-inicio" >
                 <iconify-icon icon="devicon:google"></iconify-icon>
@@ -50,9 +50,14 @@
             <input type="email" name="" id="" required>
             <label for="contraseña">Contraseña*</label>
             <input type="password" name="password" id="" required>
-            <button type="submit">Iniciar sesión</button>
+            <button type="submit" id="submitButton">Iniciar sesión</button>
             <p> ¿No tienes cuenta? <a href="registro.html">Registrate ahora</a></p> 
         </form>
+            <!-- Popover -->
+    <div id="myPopover" class="popover-content hidden">
+        <p>Loguin Correcto.</p>
+        <button id="closePopoverButton">Cerrar</button>
+    </div>
     </div>
     <footer>
         <h1 class="logo"><a href="home.html" class="link-home">Playstorm <iconify-icon icon="mingcute:lightning-line"></iconify-icon></a></h1>
@@ -109,7 +114,7 @@
         </div>
         <p>Copyright © 2024 PLAYSTORM Todos los derechos reservados</p>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script type="text/javascript" src="js/home.js"></script>
     <script type="text/javascript" src="js/registro.js"></script>
 </body>

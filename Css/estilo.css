@@ -108,8 +108,6 @@ div.container-perfil {
     display: flex; /* Mostrar cuando tenga la clase 'visible' */
     flex-direction: column;
     justify-content: center;
- 
-
 }
 header div.container-perfil a, header div.container-perfil a iconify-icon,header div.container-perfil p{
     font-size: 20px; 
@@ -216,6 +214,7 @@ button{
     display: flex;
     justify-content: center;
     padding: 20px;
+    margin-top:70px;
     
 }
 form {
@@ -260,7 +259,38 @@ form input{
     
 }
 /*-------------ANIMACION CARGA------------*/
+/* Estilo para la pantalla de carga */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #00FFB2;
+    font-size: 1.5em;
+}
 
+/* Estilo del spinner */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #9700CC; /* Color de fondo del spinner */
+    border-top: 5px solid #FF00D6; /* Color de la animación del spinner */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 /*-------------------------------JUEGO-------------------------------*/
 .breadcrumb-container {
     margin: 80px 20px;
@@ -592,6 +622,7 @@ div.comprar{
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); 
 
 }
 .btn-jugar:hover{
@@ -645,7 +676,9 @@ div.comprar {
   } 
 
 
-
+  .active-slide {
+    animation: sobresalir 0.7s ease-in-out;
+  }
   
 
 /*---------------------------------------------------------------------*/
@@ -691,6 +724,48 @@ form div iconify-icon {
 form button{
     margin-inline:10px;
     height: 30px;
+}
+
+/*--------POPOVER---------*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+    display: none; /* Inicialmente oculto */
+    z-index: 999; /* Asegura que esté por detrás del popover */
+}
+.popover-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #04182B;
+    color: #FFFFFF;
+    padding: 20px;
+    border: 1px solid #FF00D6;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    border-radius: 8px;
+    opacity: 0; /* Empieza invisible */
+    transform: translate(-50%, -60%); /* Desplazado un poco hacia arriba */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Animación */
+}
+.popover-content.show {
+    opacity: 1; /* Hace el popover visible */
+    transform: translate(-50%, -50%); /* Posición centrada */
+    animation: slideIn 0.5s ease forwards; /* Activa la animación */
+}
+.hidden {
+    display: none; /* Oculta el elemento cuando tiene esta clase */
+}
+#closePopoverButton{
+    height: 30px;
+    width: 80px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
 }
 
 footer {
@@ -805,7 +880,7 @@ button {
 }
   /* Efecto hover */
 form button:hover { /*VER SI FUNCIONA AL AGREGARLE FORM*/
-    background-color: #FF00D6; /* Fucsia al pasar el mouse */
+    background-color: #FF00D6; 
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 0, 214, 0.5); /* Sombra fucsia brillante */
 }
@@ -815,24 +890,6 @@ button:active {
     transform: scale(0.98);
 }
 
-  /* Animación del borde al crear la cuenta */
-@keyframes borderAnimation {
-    0% {
-        border: 2px solid transparent;
-    }
-    50% {
-      border: 2px solid #9700CC; /* Violeta durante la animación */
-      box-shadow: 0 0 10px rgba(151, 0, 204, 0.7); /* Sombra violeta brillante */
-    }
-    100% {
-        border: 2px solid transparent;
-    }
-}
-
-  /* Aplicación de la animación */
-button.submitted {
-    animation: borderAnimation 0.8s ease;
-}
 
 /*---------ANIMACION BOTON PLAY------------------*/
 .btn-play:hover {
@@ -882,6 +939,33 @@ button.submitted {
         transform:translateY(-15px);
     }
     
+}
+
+@keyframes sobresalir {
+    0% {
+      transform: scale(1) rotate(0deg);
+      z-index: 1; /* Mantén la tarjeta por debajo al iniciar */
+    }
+    50% {
+      transform: scale(1.1) rotate(3deg);
+      z-index: 2; /* Sobresale la tarjeta activa */
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+      z-index: 1; /* Vuelve a su posición inicial */
+    }
+  }
+
+  /* Animación del popover */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -70%); /* Inicia más arriba y menos visible */
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%); /* Termina en la posición centrada */
+    }
 }
 @media (min-width: 768px) {
     a.link-home{

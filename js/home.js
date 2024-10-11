@@ -52,13 +52,36 @@ document.addEventListener('DOMContentLoaded', function() {
     showSlides();
   }
 
-  function showSlides() {
+  /*function showSlides() {
     const slideWidth = slides[0].offsetWidth; // Obtener el ancho de una diapositiva
     const offset = -(slideIndex * slideWidth); // Calcular la posición de desplazamiento
 
     slideContainer.style.transform = `translateX(${offset}px)`; // Mover las diapositivas
   }
 });
+*/
+
+
+function showSlides() {
+  const slideWidth = slides[0].offsetWidth; // Obtener el ancho de una diapositiva
+  const offset = -(slideIndex * slideWidth); // Calcular la posición de desplazamiento
+
+  // Mover las diapositivas
+  slideContainer.style.transform = `translateX(${offset}px)`;
+
+  // Eliminar la clase active-slide de todas las tarjetas
+  slides.forEach(slide => slide.classList.remove('active-slide'));
+
+  // Añadir la clase active-slide a la tarjeta actual
+  slides[slideIndex].classList.add('active-slide');
+}
+});
+
+
+
+
+
+
 
 //para los demas carruseles
 document.addEventListener('DOMContentLoaded', function() {
@@ -108,3 +131,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+//animacion sppiner
+
+document.addEventListener('DOMContentLoaded', () => {
+  const loadingScreen = document.getElementById('loading-screen');
+  const homeContent = document.getElementById('home-content');
+  const loadingPercentage = document.getElementById('loading-percentage');
+
+  let progress = 0;
+  const loadingDuration = 5000; // 5 segundos
+  const interval = loadingDuration / 100; // Intervalo para incrementar el porcentaje
+
+  const loadingInterval = setInterval(() => {
+      progress++;
+      loadingPercentage.textContent = `${progress}%`;
+
+      if (progress >= 100) {
+          clearInterval(loadingInterval);
+          loadingScreen.classList.add('hidden'); // Oculta la pantalla de carga
+          homeContent.classList.remove('hidden'); // Muestra el contenido de la página
+      }
+  }, interval);
+});
