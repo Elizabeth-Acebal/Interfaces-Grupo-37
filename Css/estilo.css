@@ -259,6 +259,20 @@ form input{
     margin-top: 25px;
     
 }
+/*-------------ANIMACION CARGA------------*/
+.spinner{
+    width: 36px;
+    height: 36px;
+    border: 5px solid #FF00D6;
+    border-top-color: #000;
+    border-radius: 100%;
+
+    animation: spin 1s infinite;
+}
+
+@keyframes spin {
+    to{ transform: rotate(360deg)}
+}
 /*-------------------------------JUEGO-------------------------------*/
 .breadcrumb-container {
     margin: 80px 20px;
