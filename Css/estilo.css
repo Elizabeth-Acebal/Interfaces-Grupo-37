@@ -25,29 +25,30 @@ body{
     font-family: Saira, sans-serif; /*AGREGAR FUENTE*/
     background-image: url('../images/Group.png');
     background-size: cover; /* Hace que la imagen cubra todo el área */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; 
+    background-repeat: no-repeat; 
     
 }
 
 header{
     position: fixed; /* Hace que el header sea fijo */
-    top: 0;          /* Asegúrate de que esté en la parte superior */
-    left: 0;         /* Asegúrate de que esté alineado a la izquierda */
-    right: 0;        /* Asegúrate de que esté alineado a la derecha */
+    top: 0;          
+    left: 0;         
+    right: 0;       
     display:flex;
     height: 50px;
-    width: 100%; /* Asegúrate de que el header ocupe todo el ancho */
+    width: 100%; 
     background-color: #04182B;
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
+
 header button.btn-menu {
-    background-color: transparent; /* Establece el fondo como transparente */
+    background-color: transparent; 
     border: none; 
     padding: 0; 
     color: #FFFFFF;
-    margin: 15px;/*20px*/
-    font-size: 20px; /*30px*/
+    margin: 15px;
+    font-size: 20px; 
 } 
 
 
@@ -61,25 +62,22 @@ header div{
     transform: translateX(-50%);
     display: flex;
     align-items: center;
-    margin-top: 10px;/*15px*/
+    margin-top: 10px;
 
 }
 
 header div input{ 
-    height: 10px;/*30px*/
-    margin: 5px ; /*no va en desktop*/
+    height: 10px;
+    margin: 5px ; 
     margin-left: 40px;
-    padding: 5px 5px 5px 5px; /* Espacio para la lupa *//*8px 30px 8px 20px*/
-    background-color:   rgba(255, 255, 255, 0.1);
-
+    padding: 5px 5px 5px 5px; /* Espacio para la lupa */
+    background-color:   rgba(255, 255, 255, 0.236);
 }
 
 header div iconify-icon{
     color: #FFFFFF;
     position: absolute;
     right: 10px;
-   /* top: 50%;*/
-  /* transform: translateY(-50%);*/
 }
 
 .img-perfil{
@@ -180,9 +178,7 @@ h4{
 }
 
 input, select{
-    background-color: #FFFFFF;
-    color: #FFFFFF;
-    opacity: 20%;
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
 }
 a{
@@ -197,10 +193,10 @@ button{
 
 .logo{
     text-align: center;
-    margin-top:3px; /*50px*/
+    margin-top:-3px; 
     margin-right: 0;
     padding-right: 0;
-    margin-left: -10px; /*en desktop no va*/
+    margin-left: -10px; 
 }
 
 .logo iconify-icon{
@@ -473,11 +469,6 @@ form input{
     outline: none;
 }
 
-input::placeholder,
-textarea::placeholder {
-    color: white; 
-    opacity: 1; 
-}
 
 .send-button {
     background-color: #9700CC;
@@ -558,9 +549,6 @@ textarea::placeholder {
     overflow: hidden;
     margin: 60px 20px 10px 20px;
     padding-left: 10px;
-
-
-    
 }
 
 .slides {
@@ -600,7 +588,7 @@ div.comprar{
 
 .slide div p{
     color: #fff;
-    font-size: 16px;
+    font-size: 12px;/*16?*/
     display: flex;
     justify-content: center;
     font-weight: 500;
@@ -609,8 +597,8 @@ div.comprar{
 }
 .btn-jugar, .btn-comprar{
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 20px;/*30px*/
+    height: 20px;/*30px*/
     position: absolute;
     bottom: 10px; /* Ajusta la posición del botón sobre la imagen */
     right: 10px;
@@ -639,19 +627,19 @@ div.comprar{
 
 button.btn-jugar iconify-icon, button.btn-comprar iconify-icon{
     color: #FF00D6;
-    font-size: 20px;
+    font-size: 10px;/*20px*/
     box-shadow: #00cc77;
 }
 button.btn-comprar iconify-icon{
-    font-size: 30px;
+    font-size: 20px;/*30px*/
 }
 
 div.comprar {
     position: absolute;
-    top: 50px; /* Ajusta la posición para que se muestre sobre la imagen */
+    top: 20px; /* Ajusta la posición para que se muestre sobre la imagen *//*50px*/
     left: 0px; /* Ajusta la posición para que se muestre sobre la imagen */
-    height: 30px;
-    width: 60px;
+    height: 20px;/*30px*/
+    width: 40px;/*60px*/
     padding: 8px ; 
     border-radius: 0 15px 15px 0; 
     z-index: 1; /* Asegura que esté sobre la imagen */
@@ -772,47 +760,50 @@ footer {
     background-color:  #04182B;
     border-top: 3px solid #9700CC;
     color: #fff;
-    padding: 40px;
-    margin: 50px 30px 10px 30px ;
+    padding: 40px;/*20*/
+    margin: 10px 10px 10px 10px ;/*margin: 50px 30px 10px 30px ;*/
+
 }
 
 footer h1.logo {
-    margin-top: 5px;
     display: flex;
+    justify-content: center;
+    
+    
 }
 
-footer h1.logo iconify-icon {
-    margin-left:2px;
-}
 
 footer .footer-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr 3fr;
+    display: flex;/*grid-template-columns: 1fr 1fr 1fr 2fr;*/
+    flex-direction: column;
+    justify-content: center;
     gap: 5px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 footer .footer-container div {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;/*column*/
+  
 }
 
 footer .footer-container   {
     margin-bottom: 10px;
 }
 
-.container-suscripcion{
-    display: grid;
-    
+footer .footer-container div div.newsletter, footer .footer-container div div.social-icons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
 }
-
 
 footer .newsletter {
-    gap: 10px;
+    gap: 10px; /* Espacio entre el input y el botón */
+
 }
 
+
 footer .newsletter input[type="email"] {
-    
     width: 300px;
     padding: 5px;
     border: none;
@@ -834,15 +825,21 @@ footer .newsletter button:hover {
     background-color: #00cc77;
 }
 
-footer .social-icons {
+
+footer div.footer-social{
     display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
+    flex-direction: row;
+    margin-top: 15px;
+    padding-right: 10px;
 }
 
-footer .social-icons iconify-icon {
+
+footer div.social-icons iconify-icon {
     font-size: 1.5rem;
     color: #ccc;
+    margin-left: 10px;
+    margin-top: -14px;
+    padding: 8px;
 }
 
 
@@ -854,6 +851,8 @@ footer .language-select select {
     background-color: #1c2c49;
     border: 2px solid #FFFFFF;
     color: #fff;
+    margin: 5px;
+    margin-left: 15px;
 }
 
 footer p {
@@ -863,6 +862,12 @@ footer p {
     margin-top: 20px;
     font-size: 0.8rem;
 }
+
+
+
+
+
+
 /*color: #FF00D6; FUCSIA
 color: #00FFB2; VERDE
 color:#9700CC; VIOLETA
@@ -913,20 +918,6 @@ button:active {
     }
 }
 
-@keyframes shaking {
-    10%{
-        transform: scale(1.05) rotate(5deg);
-    }
-    20%{
-        transform: scale(1.05) rotate(-5deg);
-    }
-    30%{
-        transform: scale(1.05) rotate(5deg);
-    }
-    40%{
-        transform: none;
-    }
-}
 
 @keyframes saltar {
     0%, 20%, 50%, 80%, 100%{
@@ -940,21 +931,57 @@ button:active {
     }
     
 }
-
-@keyframes sobresalir {
+@keyframes shaking {
     0% {
-      transform: scale(1) rotate(0deg);
-      z-index: 1; /* Mantén la tarjeta por debajo al iniciar */
+        transform: scale(1) rotate(0deg) translateX(0);
+    }
+    10% {
+        transform: scale(1.1) rotate(5deg) translateX(2px);
+    }
+    20% {
+        transform: scale(1.1) rotate(-5deg) translateX(-2px);
+    }
+    30% {
+        transform: scale(1.1) rotate(4deg) translateX(1px);
+    }
+    40% {
+        transform: scale(1.1) rotate(-4deg) translateX(-1px);
     }
     50% {
-      transform: scale(1.1) rotate(3deg);
-      z-index: 2; /* Sobresale la tarjeta activa */
+        transform: scale(1.05) rotate(3deg) translateX(0);
+    }
+    60% {
+        transform: scale(1.05) rotate(-3deg) translateX(2px);
+    }
+    70% {
+        transform: scale(1.05) rotate(2deg) translateX(-2px);
+    }
+    80% {
+        transform: scale(1.05) rotate(-2deg) translateX(1px);
+    }
+    90% {
+        transform: scale(1) rotate(1deg) translateX(0);
     }
     100% {
-      transform: scale(1) rotate(0deg);
-      z-index: 1; /* Vuelve a su posición inicial */
+        transform: scale(1) rotate(0deg) translateX(0);
     }
-  }
+}
+
+/*ANIMACION CARRUSEL*/
+@keyframes sobresalir {
+    0% {
+        transform: scale(1) rotate(0deg);
+        z-index: 1; /* Mantén la tarjeta por debajo al iniciar */
+    }
+    50% {
+        transform: scale(1.1) rotate(3deg);
+        z-index: 2; /* Sobresale la tarjeta activa */
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        z-index: 1; /* Vuelve a su posición inicial */
+    }
+}
 
   /* Animación del popover */
 @keyframes slideIn {
@@ -1044,7 +1071,26 @@ button:active {
         right: 5px;
     } 
     
-
+    .slide div p{
+        font-size: 16px;
+    }
+    .btn-jugar, .btn-comprar{
+        width: 30px;
+        height: 30px;
+    }
+    button.btn-jugar iconify-icon, button.btn-comprar iconify-icon{
+        font-size: 20px;
+    }
+    button.btn-comprar iconify-icon{
+        font-size: 30px;
+    }
+    
+    div.comprar {
+        top: 50px;
+        height: 30px;
+        width: 60px;
+    }
+    
     header div.container-perfil a iconify-icon{
         display: inline-block; /* Esto asegura que no se comporte como texto */
         font-size: inherit;    /* Hace que el tamaño del icono sea igual al texto */
@@ -1057,6 +1103,40 @@ button:active {
     }
     footer a:hover, span iconify-icon:hover,nav a:hover,footer .social-icons iconify-icon:hover,  div.container-perfil a:hover {
         color: #FF00D6; 
+    }
+
+  
+    footer {
+        padding: 40px;/*40*/
+        margin: 50px 30px 10px 30px ;/*margin: 50px 30px 10px 30px ;*/
+    }
+    footer h1.logo {
+        margin-left: 40px;/*40px*/
+        justify-content: flex-start;
+    }
+
+    footer .footer-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 2fr;/*grid-template-columns: 1fr 1fr 1fr 2fr;*/
+        gap: 5px;
+        margin-top: 10px;
+    }
+    
+    div.navegacion{
+        margin-left: 40px;
+
+    }
+    
+    
+    .navegacion{
+        margin-left: 40px;/*40px*/
+    }
+   
+    
+    .container-suscripcion{
+        display: grid;
+        
+        
     }
     
     /* imagenes con tamaño default
