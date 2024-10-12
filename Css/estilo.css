@@ -33,7 +33,7 @@ body{
 header{
     position: fixed; /* Hace que el header sea fijo */
     top: 0;          
-    left: 0;         
+    left: 0px;         
     right: 0;       
     display:flex;
     height: 50px;
@@ -76,7 +76,7 @@ header div input{
 
 header div iconify-icon{
     color: #FFFFFF;
-    position: absolute;
+    position: absolute; 
     right: 10px;
 }
 
@@ -89,30 +89,32 @@ header div iconify-icon{
     position: relative;
 }
 
-div.container-perfil {
+header div.container-perfil {
     display: none; 
     position: absolute;
-    margin-left: 210px;
+    margin-left: 200px;
     top: calc(70% ); /* Se posiciona justo debajo de la imagen de perfil */
-    background-color:  #04182B;
+    background-color:  rgba(4, 24, 43, 0.8);
     z-index: 100;
     border-radius: 10px;
-    height: 210px;
-    width: 160px;
-    border:solid 2px #9700CC;
+    height: 160px;
+    width: 180px;
+    border: solid 2px #9700CC;
 }
 
 .container-perfil.visible {
     display: flex; /* Mostrar cuando tenga la clase 'visible' */
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;    
 }
 header div.container-perfil a, header div.container-perfil a iconify-icon,header div.container-perfil p{
-    font-size: 20px; 
     color: #9700CC; 
-   
+    font-size: 20px;
 }
-
+header div.container-perfil p{
+    margin-left: 17px;
+}
 header div.container-perfil a iconify-icon{
     display: inline-block; /* Esto asegura que no se comporte como texto */
     font-size: inherit;    /* Hace que el tamaño del icono sea igual al texto */
@@ -120,12 +122,8 @@ header div.container-perfil a iconify-icon{
     padding: 10px;
 }
 header div.container-perfil a{
-    padding: 10px;
-    margin-left: 30px;
-    align-items: center;
+    margin-left: 40px;
 }
-
-
 
 .carrito{
     color: #FFFFFF;
@@ -1036,13 +1034,7 @@ button:active {
         top:60px
     }
 
-    div.container-perfil {
-        margin-left: 800px;
-        top: calc(100% );
-        height: 259px;
-        width: 250px;
-        
-    }
+
 
     .carrusel {
         margin: 80px 50px 10px 30px;
@@ -1090,12 +1082,15 @@ button:active {
         height: 30px;
         width: 60px;
     }
+
+    header div.container-perfil {
+        margin-left: 800px;
+        height: 230px;
+        width: 270px;
+    }
     
     header div.container-perfil a iconify-icon{
-        display: inline-block; /* Esto asegura que no se comporte como texto */
-        font-size: inherit;    /* Hace que el tamaño del icono sea igual al texto */
         left: 10px;
-        padding: 10px;
     }
 
     header div.container-perfil a, header div.container-perfil a iconify-icon,header div.container-perfil p{
@@ -1105,19 +1100,29 @@ button:active {
         color: #FF00D6; 
     }
 
-  
+    header div.container-perfil a, header div.container-perfil a iconify-icon,header div.container-perfil p{
+        color: #9700CC; 
+    }
+    header div.container-perfil p{
+        margin-left: 30px;
+    }
+
+    header div.container-perfil a{
+        margin-left: 60px;
+    }
+    
     footer {
-        padding: 40px;/*40*/
-        margin: 50px 30px 10px 30px ;/*margin: 50px 30px 10px 30px ;*/
+        padding: 40px;
+        margin: 50px 30px 10px 30px ;
     }
     footer h1.logo {
-        margin-left: 40px;/*40px*/
+        margin-left: 40px;
         justify-content: flex-start;
     }
 
     footer .footer-container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 2fr;/*grid-template-columns: 1fr 1fr 1fr 2fr;*/
+        grid-template-columns: 1fr 1fr 1fr 2fr;
         gap: 5px;
         margin-top: 10px;
     }
@@ -1127,16 +1132,12 @@ button:active {
 
     }
     
-    
     .navegacion{
-        margin-left: 40px;/*40px*/
+        margin-left: 40px;
     }
-   
-    
+
     .container-suscripcion{
         display: grid;
-        
-        
     }
     
     /* imagenes con tamaño default
