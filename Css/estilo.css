@@ -584,6 +584,13 @@ div.comprar{
     background-color: #FF00D6;
 }
 
+div.en-carrito {
+    background-color: #00FFB2;
+}
+
+div.en-carrito p iconify-icon{
+    font-size: 20px;
+}
 .slide div p{
     color: #fff;
     font-size: 12px;/*16?*/
@@ -632,7 +639,7 @@ button.btn-comprar iconify-icon{
     font-size: 20px;/*30px*/
 }
 
-div.comprar {
+div.comprar, div.en-carrito {
     position: absolute;
     top: 20px; /* Ajusta la posición para que se muestre sobre la imagen *//*50px*/
     left: 0px; /* Ajusta la posición para que se muestre sobre la imagen */
