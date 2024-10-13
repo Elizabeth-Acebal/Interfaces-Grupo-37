@@ -22,7 +22,7 @@ COLORES
 
 body{
     background-color: #04182B; 
-    font-family: Saira, sans-serif; /*AGREGAR FUENTE*/
+    font-family: Saira, sans-serif; 
     background-image: url('../images/Group.png');
     background-size: cover; /* Hace que la imagen cubra todo el área */
     background-position: center; 
@@ -72,6 +72,7 @@ header div input{
     margin-left: 40px;
     padding: 5px 5px 5px 5px; /* Espacio para la lupa */
     background-color:   rgba(255, 255, 255, 0.236);
+    
 }
 
 header div iconify-icon{
@@ -99,7 +100,6 @@ header div.container-perfil {
     border-radius: 10px;
     height: 160px;
     width: 180px;
-    border: solid 2px #9700CC;
 }
 
 .container-perfil.visible {
@@ -109,11 +109,15 @@ header div.container-perfil {
     align-items: flex-start;    
 }
 header div.container-perfil a, header div.container-perfil a iconify-icon,header div.container-perfil p{
-    color: #9700CC; 
+    color: #FF00D6; 
     font-size: 20px;
 }
 header div.container-perfil p{
     margin-left: 17px;
+    color: #00FFB2;
+}
+header div.container-perfil a{
+    color: #FFFFFF;
 }
 header div.container-perfil a iconify-icon{
     display: inline-block; /* Esto asegura que no se comporte como texto */
@@ -127,8 +131,8 @@ header div.container-perfil a{
 
 .carrito{
     color: #FFFFFF;
-    margin: 15px 0 0 auto; /* margen superior, derecho, inferior y luego izquierdo (auto) 20px 40px 0 auto */
-    font-size: 20px; /*30px*/
+    margin: 15px 0 0 auto; /* margen superior, derecho, inferior y luego izquierdo (auto)  */
+    font-size: 20px; 
 }
 
 nav {
@@ -199,9 +203,9 @@ button{
 
 .logo iconify-icon{
     margin-left: 0;
-    display: inline-block; /* Esto asegura que no se comporte como texto */
-    font-size: inherit;    /* Hace que el tamaño del icono sea igual al texto */
-    margin-left: -7px; /* Ajusta el margen izquierdo para pegar el icono al texto */
+    display: inline-block; 
+    font-size: inherit;    
+    margin-left: -7px; 
     padding-left: 0;
 }
 .container-form{
@@ -227,6 +231,7 @@ form input{
     margin-left: 10px;
     margin-right: 10px;
     height: 30px;
+    color: #FFFFFF;
 }
 
 .container-form-inicio{
@@ -234,8 +239,8 @@ form input{
 }
 
 .container-inicio{
-    display: flex;            /* Alinea los elementos en fila */
-    justify-content: flex-start; /* Alinea al lado izquierdo */
+    display: flex;            
+    justify-content: flex-start; 
     padding-left: 0;
     height: 30px;  
     background-color: #04182B;
@@ -253,14 +258,18 @@ form input{
     
 }
 /*-------------ANIMACION CARGA------------*/
-/* Estilo para la pantalla de carga */
+
+/* Clase para ocultar la pantalla de carga */
+.hidden {
+    display: none;
+}
 .loading-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+    background-color: rgba(0, 0, 0, 0.8); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -273,7 +282,7 @@ form input{
 .spinner {
     width: 50px;
     height: 50px;
-    border: 5px solid #9700CC; /* Color de fondo del spinner */
+    border: 5px solid #9700CC; 
     border-top: 5px solid #FF00D6; /* Color de la animación del spinner */
     border-radius: 50%;
     animation: spin 1s linear infinite;
@@ -387,7 +396,7 @@ form input{
     width: 140px;
     height: 40px;
     margin: 10px;
-    position: relative; /* Asegurarse de que el pseudo-elemento esté posicionado en relación al botón */
+    position: relative; 
     overflow: hidden; /* Para ocultar el pseudo-elemento cuando se salga del área del botón */
     transition-duration: 0.4s;
 }
@@ -397,10 +406,10 @@ form input{
     background: #00FFB2;
     display: block;
     position: absolute;
-    width: 100%; /* Ocupa todo el ancho del botón */
-    height: 100%; /* Ocupa toda la altura del botón */
-    top: 0; /* Alinear con la parte superior del botón */
-    left: 0; /* Alinear con la parte izquierda del botón */
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    left: 0; 
     transform: scale(0); /* Inicialmente oculto usando escala */
     opacity: 0;
     transition: transform 0.4s, opacity 0.4s;
@@ -414,9 +423,9 @@ form input{
 
 
 .container-img-juego {
-    position: absolute; /* Permite mover el div a cualquier lugar dentro del contenedor padre */
-    top: 10px; /* Ajusta la distancia desde la parte superior */
-    right: 10px; /* Ajusta la distancia desde la parte derecha */
+    position: absolute; 
+    top: 10px;
+    right: 10px; 
     display: flex;
     flex-direction: column;
 }
@@ -541,25 +550,40 @@ form input{
 /*---------------------------------------------------------------------*/
 /*--------------------------------CARRUSEL--------------------------------*/
 
-.carrusel {
+.carrusel  {
     position: relative;
     max-width: 90%;
     overflow: hidden;
-    margin: 60px 20px 10px 20px;
+    margin: 60px 20px 40px 20px;
     padding-left: 10px;
 }
 
-.slides {
+.carrusel-secundario{
+    position: relative;
+    max-width: 90%;
+    overflow: hidden;
+    margin: 10px 10px 20px 10px;
+    padding: 15px;
+}
+
+.slides, .slides2 {
     display: flex;
     transition: transform 0.5s ease-in-out; /* Animación suave */
     
 }
 
-.slide {
-    position: relative; /* Permite posicionar elementos hijos con position: absolute */
-    min-width: 32%; /* Cada imagen ocupa un tercio del ancho del carrusel */
+.slide, .slide-card {
+    position: relative; 
     box-sizing: border-box;
     margin: 5px;
+}
+
+.slide{
+    min-width: 31.5%; /* Cada imagen ocupa un tercio del ancho del carrusel */
+}
+
+.slide-card{
+    min-width: 24%; /* Cada imagen ocupa  (1/4) del ancho del carrusel */
 }
 
 .slide img {
@@ -569,8 +593,13 @@ form input{
     height: 200px;
 
 }
+.slide-card img {
+    width: 130px; 
+    height: 190px; 
+    border-radius: 10px;
+}
 
-.slide div{
+.slide div, .slide-card div{
     background-color: #FF00D6;
     height: 50px;
     width: 100%;
@@ -579,9 +608,21 @@ form input{
     left: 0px;
     border-radius: 0 0 10px 10px;
 }
-div.comprar{
+.slide-card div{
+    height: 40px;
+    width: 130px;
+}
+
+div.comprar, .slide-card div.comprar{
     position: absolute;
     background-color: #FF00D6;
+}
+
+.slide-card div.comprar{
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 div.en-carrito {
@@ -591,21 +632,21 @@ div.en-carrito {
 div.en-carrito p iconify-icon{
     font-size: 20px;
 }
-.slide div p{
+.slide div p, .slide-card div p{
     color: #fff;
-    font-size: 12px;/*16?*/
+    font-size: 12px;
     display: flex;
     justify-content: center;
     font-weight: 500;
     margin-top: 1px;
     
 }
-.btn-jugar, .btn-comprar{
+.btn-jugar,.slide-card .btn-jugar, .btn-comprar, .slide-card .btn-comprar{
     border-radius: 50%;
-    width: 20px;/*30px*/
-    height: 20px;/*30px*/
+    width: 20px;
+    height: 20px;
     position: absolute;
-    bottom: 10px; /* Ajusta la posición del botón sobre la imagen */
+    bottom: 10px; 
     right: 10px;
     background-color: #00FFB2;
     border: none;
@@ -616,40 +657,58 @@ div.en-carrito p iconify-icon{
     justify-content: center;
     align-items: center;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); 
-
 }
+
+.slide-card .btn-jugar, .slide-card .btn-comprar{
+    bottom: 5px; 
+    margin-right: -7px;
+}
+
 .btn-jugar:hover{
     animation: shaking 2s infinite;
 }
- 
 
-.btn-comprar{
+
+.btn-comprar, .slide-card .btn-comprar{
     background-color: #9700CC;
 }
 .btn-comprar:hover{
     animation: saltar 0.5s;
 }
 
-button.btn-jugar iconify-icon, button.btn-comprar iconify-icon{
-    color: #FF00D6;
-    font-size: 10px;/*20px*/
+button.btn-jugar iconify-icon, .slide-card button.btn-jugar iconify-icon, button.btn-comprar iconify, .slide-card button.btn-comprar iconify-icon {
+    color: #FFFFFF;
+    font-size: 10px;
     box-shadow: #00cc77;
 }
-button.btn-comprar iconify-icon{
-    font-size: 20px;/*30px*/
+button.btn-comprar iconify-icon, .slide-card button.btn-comprar iconify-icon{
+    font-size: 20px;
 }
 
 div.comprar, div.en-carrito {
     position: absolute;
-    top: 20px; /* Ajusta la posición para que se muestre sobre la imagen *//*50px*/
-    left: 0px; /* Ajusta la posición para que se muestre sobre la imagen */
-    height: 20px;/*30px*/
-    width: 40px;/*60px*/
+    top: 20px; 
+    left: 0px; 
+    height: 20px;
+    width: 40px;
     padding: 8px ; 
     border-radius: 0 15px 15px 0; 
     z-index: 1; /* Asegura que esté sobre la imagen */
 }
-  .prev, .next {
+
+.slide-card div.en-carrito{
+    height: 10px;
+    width: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-card div.en-carrito iconify-icon{
+    font-size: 15px;
+}
+
+.prev, .prev2, .next, .next2 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -658,22 +717,26 @@ div.comprar, div.en-carrito {
     border: none;
     padding: 10px;
     cursor: pointer;
-  }
-  
-  .prev {
+}
+
+.prev, .prev2 {
     left:20px;
-  }
-  
-  .next {
+}
+
+.next, .next2 {
     right: 0px;
-  } 
+} 
 
 
-  .active-slide {
+.active-slide {
     animation: sobresalir 0.7s ease-in-out;
-  }
-  
+}
 
+section h2{
+    margin-left: 30px;
+    font-size: 20px;
+    color: #FF00D6;
+}
 /*---------------------------------------------------------------------*/
 form p a{
     color: #FF00D6;
@@ -726,7 +789,7 @@ form button{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+    background-color: rgba(0, 0, 0, 0.5); 
     display: none; /* Inicialmente oculto */
     z-index: 999; /* Asegura que esté por detrás del popover */
 }
@@ -743,15 +806,15 @@ form button{
     border-radius: 8px;
     opacity: 0; /* Empieza invisible */
     transform: translate(-50%, -60%); /* Desplazado un poco hacia arriba */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Animación */
+    transition: opacity 0.5s ease, transform 0.5s ease; 
 }
 .popover-content.show {
     opacity: 1; /* Hace el popover visible */
     transform: translate(-50%, -50%); /* Posición centrada */
-    animation: slideIn 0.5s ease forwards; /* Activa la animación */
+    animation: slideIn 0.5s ease forwards; 
 }
 .hidden {
-    display: none; /* Oculta el elemento cuando tiene esta clase */
+    display: none; 
 }
 #closePopoverButton{
     height: 30px;
@@ -765,8 +828,8 @@ footer {
     background-color:  #04182B;
     border-top: 3px solid #9700CC;
     color: #fff;
-    padding: 40px;/*20*/
-    margin: 10px 10px 10px 10px ;/*margin: 50px 30px 10px 30px ;*/
+    padding: 40px;
+    margin: 10px 0px 0px 0px ;
 
 }
 
@@ -779,7 +842,7 @@ footer h1.logo {
 
 
 footer .footer-container {
-    display: flex;/*grid-template-columns: 1fr 1fr 1fr 2fr;*/
+    display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 5px;
@@ -788,8 +851,7 @@ footer .footer-container {
 
 footer .footer-container div {
     display: flex;
-    flex-direction: column;/*column*/
-  
+    flex-direction: column;
 }
 
 footer .footer-container   {
@@ -868,18 +930,9 @@ footer p {
     font-size: 0.8rem;
 }
 
-
-
-
-
-
-/*color: #FF00D6; FUCSIA
-color: #00FFB2; VERDE
-color:#9700CC; VIOLETA
- */
  /* Estilo del botón antes del hover */
 button {
-    background-color: #00FFB2; /* Verde inicial */
+    background-color: #00FFB2; 
     color: white;
     padding: 10px 20px;
     border: none;
@@ -888,8 +941,8 @@ button {
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
-  /* Efecto hover */
-form button:hover { /*VER SI FUNCIONA AL AGREGARLE FORM*/
+
+form button:hover { 
     background-color: #FF00D6; 
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 0, 214, 0.5); /* Sombra fucsia brillante */
@@ -1008,21 +1061,21 @@ button:active {
         margin-top:12px;
     }
     header button.btn-menu{  
-        margin: 20px;/*20px*/
-        font-size: 30px; /*30px*/
+        margin: 20px;
+        font-size: 30px; 
     }
     
     header{
         height: 60px;
     }
     header div{
-        margin-top: 15px;/*15px*/
+        margin-top: 15px;
     }
 
     header div input{ 
-        height: 20px;/*30px*/
-        margin: 0px ; /*no va en desktop*/
-        padding: 8px 100px 8px 30px; /* Espacio para la lupa *//*8px 30px 8px 20px*/
+        height: 20px;
+        margin: 0px ; 
+        padding: 8px 30px 8px 30px; /* Espacio para la lupa */
     
     }
 
@@ -1041,20 +1094,23 @@ button:active {
         top:60px
     }
 
-
-
     .carrusel {
-        margin: 80px 50px 10px 30px;
+        margin: 80px 30px 50px 30px;
         padding-left: 50px; 
     }
 
-    .slides {
-        display: flex;
-        transition: transform 0.5s ease-in-out; /* Animación suave */
-        
+    .carrusel-secundario{
+        margin: 10px 50px 20px 30px;
+        padding-left: 50px;
+    }
+    .slide{
+        min-width: 32%; /* Cada imagen ocupa un tercio del ancho del carrusel */
+    }
+    .slide-card{
+        min-width: 15.6%; /* Cada imagen ocupa  (1/6) del ancho del carrusel */
     }
 
-    .slide {
+    .slide, .slide-card {
         margin: 10px;
     }
 
@@ -1063,15 +1119,39 @@ button:active {
         height: 300px;
     }
 
-    .prev {
+    .slide-card img{
+        width: 260px;
+        height: 200px;
+    }
+    .slide-card div{
+        height: 40px;
+        width: 260px;
+        padding-bottom: 5px;
+    }
+    
+    .slide-card div.comprar{
+        height: 10px;
+        margin-top: -30px;
+    }
+
+    .slide-card .btn-jugar, .slide-card .btn-comprar{
+        bottom: 8px; /* Ajusta la posición del botón sobre la imagen */
+        margin-right: 5px;
+    }
+    .prev, .prev2{
         left: 60px;
     }
+
+    .next2{
+        right: 20px;
+    }
     .next {
-        right: 5px;
+        right: 15px;
     } 
     
-    .slide div p{
-        font-size: 16px;
+    .slide div p, .slide-card div p{
+        font-size: 14px;
+        
     }
     .btn-jugar, .btn-comprar{
         width: 30px;
@@ -1090,6 +1170,12 @@ button:active {
         width: 60px;
     }
 
+    section h2{
+        margin-left: 90px;
+        font-size: 25px;
+        
+    }
+
     header div.container-perfil {
         margin-left: 800px;
         height: 230px;
@@ -1103,13 +1189,11 @@ button:active {
     header div.container-perfil a, header div.container-perfil a iconify-icon,header div.container-perfil p{
         font-size: 30px; 
     }
-    footer a:hover, span iconify-icon:hover,nav a:hover,footer .social-icons iconify-icon:hover,  div.container-perfil a:hover {
+    footer a:hover, span iconify-icon:hover,nav a:hover,footer .social-icons iconify-icon:hover,  div.container-perfil a:hover, header div.container-perfil a:hover {
         color: #FF00D6; 
     }
 
-    header div.container-perfil a, header div.container-perfil a iconify-icon,header div.container-perfil p{
-        color: #9700CC; 
-    }
+
     header div.container-perfil p{
         margin-left: 30px;
     }
@@ -1119,8 +1203,8 @@ button:active {
     }
     
     footer {
-        padding: 40px;
-        margin: 50px 30px 10px 30px ;
+        padding: 20px;
+        margin: 50px 0px 0px 0px ;
     }
     footer h1.logo {
         margin-left: 40px;
@@ -1146,22 +1230,7 @@ button:active {
     .container-suscripcion{
         display: grid;
     }
-    
-    /* imagenes con tamaño default
-    section img {
-        width: 172px;
-        height: 180px;
-    }
-    section {
-        display: flex;
-        margin-top: 10px;
-        margin-bottom: 60px;
-        margin-left:  100px;
-        margin-right: 100px;
-    }
 
-    section div{
-        margin-left: 15px;
-        margin-right: 15px;
-    }*/
+
+
 }

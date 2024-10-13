@@ -1,14 +1,5 @@
 "use strict";
 
-"use strict";
-
-
-// Redirigir al home después de un registro exitoso
-document.querySelector('form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Evita el envío por defecto del formulario
-    // La redirección ahora la haremos después de cerrar el popover y lanzar el confeti
-});
-
 // popover
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('myForm');
@@ -20,11 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mostrar el popover, el overlay y lanzar el confeti al enviar el formulario
     form.addEventListener('submit', (event) => {
-        event.preventDefault(); // Evita el envío del formulario
+        event.preventDefault(); 
         overlay.style.display = 'block'; // Muestra el overlay
         popover.classList.remove('hidden'); // Muestra el popover
         setTimeout(() => {
-            popover.classList.add('show'); // Activa la animación del popover
+            popover.classList.add('show'); 
         }, 10); // Un pequeño retardo para asegurar que la transición ocurra
 
         // Lanzar confeti al mostrar el popover

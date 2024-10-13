@@ -15,123 +15,7 @@ document.getElementById('img-perfil').addEventListener('click', function() {
     perfilContainer.classList.toggle('visible'); // Alterna la clase 'visible'
 });
 
-
-//carrusel
-document.addEventListener('DOMContentLoaded', function() {
-  let slideIndex = 0;
-  const visibleSlides = 3; // Número de imágenes visibles a la vez
-  const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length;
-  const slideContainer = document.querySelector('.slides');
-  const prevButton = document.querySelector('.prev');
-  const nextButton = document.querySelector('.next');
-
-  // Mostrar las diapositivas iniciales
-  showSlides();
-
-  // Event listener para el botón "Anterior"
-  prevButton.addEventListener('click', function() {
-    moveSlide(-1);
-  });
-
-  // Event listener para el botón "Siguiente"
-  nextButton.addEventListener('click', function() {
-    moveSlide(1);
-  });
-
-  function moveSlide(n) {
-    slideIndex += n;
-
-    // Control para que el índice no se desborde
-    if (slideIndex > totalSlides - visibleSlides) {
-      slideIndex = 0;
-    } else if (slideIndex < 0) {
-      slideIndex = totalSlides - visibleSlides;
-    }
-
-    showSlides();
-  }
-
-  /*function showSlides() {
-    const slideWidth = slides[0].offsetWidth; // Obtener el ancho de una diapositiva
-    const offset = -(slideIndex * slideWidth); // Calcular la posición de desplazamiento
-
-    slideContainer.style.transform = `translateX(${offset}px)`; // Mover las diapositivas
-  }
-});
-*/
-
-
-function showSlides() {
-  const slideWidth = slides[0].offsetWidth; // Obtener el ancho de una diapositiva
-  const offset = -(slideIndex * slideWidth); // Calcular la posición de desplazamiento
-
-  // Mover las diapositivas
-  slideContainer.style.transform = `translateX(${offset}px)`;
-
-  // Eliminar la clase active-slide de todas las tarjetas
-  slides.forEach(slide => slide.classList.remove('active-slide'));
-
-  // Añadir la clase active-slide a la tarjeta actual
-  slides[slideIndex].classList.add('active-slide');
-}
-});
-
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  let cardIndex = 0;
-  const visibleCards = 4; 
-  const cards = document.querySelectorAll('.card');
-  const totalCards = cards.length;
-  const cardContainer = document.querySelector('.cards');
-  const buttonMenos = document.querySelector('.btnMenos');
-  const buttonMas = document.querySelector('.btnMas');
-
-  
-  showCards();
-
-  
-  buttonMenos.addEventListener('click', function() {
-    moveCard(-1);
-  });
-
- 
-  buttonMas.addEventListener('click', function() {
-    moveCard(1);
-  });
-
-  function moveCard(n) {
-    cardIndex += n;
-
-    
-    if (cardIndex > totalCards - visibleCards) {
-      cardIndex = 0;
-    } else if (cardIndex < 0) {
-      cardIndex = totalCards - visibleCards;
-    }
-
-    showCards();
-  }
-
-  function showCards() {
-    const cardWidth = cards[0].offsetWidth; 
-    const offsett = -(cardIndex * cardWidth); 
-
-    cardContainer.style.transform = `translateX(${offsett}px)`; 
-  }
-});
-
-
-
-
-
-//animacion sppiner
+//animacion sppiner//
 
 document.addEventListener('DOMContentLoaded', () => {
   const loadingScreen = document.getElementById('loading-screen');
@@ -153,3 +37,71 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   }, interval);
 });
+
+
+
+
+// carruseles
+document.addEventListener('DOMContentLoaded', function () {
+  //  carrusel principal
+  const principalCarrusel = document.querySelector('.principal-carrusel');
+  if (principalCarrusel) {
+      configurarCarrusel(principalCarrusel, 'slides', 'next', 'prev', 3); // El carrusel principal muestra 3 imágenes
+  }
+
+  // Configuración de los carruseles secundarios
+  const carruselesSecundarios = document.querySelectorAll('.carrusel-secundario');
+  carruselesSecundarios.forEach(carrusel => {
+      const visibleSlides = window.innerWidth <= 768 ? 4 : 6; // Secundarios muestran 4 en móvil, 6 en pantallas grandes
+      configurarCarrusel(carrusel, 'slides2', 'next2', 'prev2', visibleSlides);
+  });
+
+  function configurarCarrusel(carrusel, slideClass, nextButtonClass, prevButtonClass, visibleSlides) {
+      const slides = carrusel.querySelectorAll(`.${slideClass} .slide, .${slideClass} .slide-card`);
+      const slideContainer = carrusel.querySelector(`.${slideClass}`);
+      const prevButton = carrusel.querySelector(`.${prevButtonClass}`);
+      const nextButton = carrusel.querySelector(`.${nextButtonClass}`);
+      let slideIndex = 0;
+      const totalSlides = slides.length;
+
+      showSlides(slideContainer, slides, slideIndex, visibleSlides);
+
+      prevButton.addEventListener('click', function () {
+          moveSlide(-1, slideContainer, slides, visibleSlides);
+      });
+
+      nextButton.addEventListener('click', function () {
+          moveSlide(1, slideContainer, slides, visibleSlides);
+      });
+
+      function moveSlide(n, slideContainer, slides, visibleSlides) {
+          slideIndex += n;
+
+          // Control para evitar desbordes
+          if (slideIndex > totalSlides - visibleSlides) {
+              slideIndex = 0;
+          } else if (slideIndex < 0) {
+              slideIndex = totalSlides - visibleSlides;
+          }
+
+          showSlides(slideContainer, slides, slideIndex, visibleSlides);
+      }
+
+      function showSlides(slideContainer, slides, slideIndex, visibleSlides) {
+          const slideWidth = slides[0].offsetWidth;
+          const offset = -(slideIndex * slideWidth);
+
+          slideContainer.style.transform = `translateX(${offset}px)`;
+
+          slides.forEach(slide => slide.classList.remove('active-slide'));
+
+          for (let i = 0; i < visibleSlides; i++) {
+              const currentSlide = slides[slideIndex + i];
+              if (currentSlide) {
+                  currentSlide.classList.add('active-slide');
+              }
+          }
+      }
+  }
+});
+
