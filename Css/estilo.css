@@ -1265,28 +1265,28 @@ button:active {
     }
 
     
-footer div.social-icons iconify-icon {
-    margin-left: 10px;
-    margin-top: -14px;
-    padding: 8px;
-}
+    footer div.social-icons iconify-icon {
+        margin-left: 10px;
+        margin-top: -14px;
+        padding: 8px;
+    }
 
 
 
-footer .language-select select {
-    width: 100px;
-    padding: 5px;
+    footer .language-select select {
+        width: 100px;
+        padding: 5px;
 
-}
+    }
 
-footer .newsletter button {
-    width: 100px;
-    font-size: 16px;
-}
+    footer .newsletter button {
+        width: 100px;
+        font-size: 16px;
+    }
 
-footer p {
-    font-size:18px;
-}
+    footer p {
+        font-size:18px;
+    }
 
     div.navegacion{
         margin-left: 40px;
