@@ -46,13 +46,22 @@ document.addEventListener('DOMContentLoaded', function () {
   //  carrusel principal
   const principalCarrusel = document.querySelector('.principal-carrusel');
   if (principalCarrusel) {
-      configurarCarrusel(principalCarrusel, 'slides', 'next', 'prev', 3); // El carrusel principal muestra 3 imágenes
-  }
+      configurarCarrusel(principalCarrusel, 'slides', 'next', 'prev',  obtenerNumeroDeImagenes()); // El carrusel principal muestra 3 imágenes
+    }
+     // Función para determinar cuántas imágenes mostrar
+  function obtenerNumeroDeImagenes() {
+    return window.innerWidth < 768 ? 2 : 3; // Muestra 2 imágenes en móviles y 3 en desktop
+}
+
+// Agrega un evento para actualizar el carrusel al redimensionar la ventana
+window.addEventListener('resize', function() {
+    configurarCarrusel(principalCarrusel, 'slides', 'next', 'prev', obtenerNumeroDeImagenes());
+});
 
   // Configuración de los carruseles secundarios
   const carruselesSecundarios = document.querySelectorAll('.carrusel-secundario');
   carruselesSecundarios.forEach(carrusel => {
-      const visibleSlides = window.innerWidth <= 768 ? 4 : 6; // Secundarios muestran 4 en móvil, 6 en pantallas grandes
+      const visibleSlides = window.innerWidth <= 768 ? 3 : 6; // Secundarios muestran 4 en móvil, 6 en pantallas grandes
       configurarCarrusel(carrusel, 'slides2', 'next2', 'prev2', visibleSlides);
   });
 
