@@ -374,7 +374,7 @@ form input{
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    margin-left: 380px;
+    margin-left: 190px;
     margin-top:50px;
     position: relative; 
 }
@@ -1149,12 +1149,12 @@ button:active {
     }
 
     .slide-card img{
-        width: 260px;
+        width: 220px;
         height: 200px;
     }
     .slide-card div{
         height: 40px;
-        width: 260px;
+        width: 220px;
         padding-bottom: 5px;
     }
     
@@ -1172,17 +1172,22 @@ button:active {
 
     .slide-card .btn-jugar, .slide-card .btn-comprar{
         bottom: 8px; /* Ajusta la posición del botón sobre la imagen */
-        margin-right: 5px;
+        margin-left: 0;
+        width: 30px;
+        height: 30px;
     }
+
+    
+
     .prev, .prev2{
         left: 60px;
     }
 
     .next2{
-        right: 20px;
+        right: 0px;
     }
     .next {
-        right: 15px;
+        right: 5px;
     } 
     
     .slide div p, .slide-card div p{
@@ -1193,10 +1198,10 @@ button:active {
         width: 30px;
         height: 30px;
     }
-    button.btn-jugar iconify-icon, button.btn-comprar iconify-icon{
-        font-size: 20px;
+    button.btn-jugar iconify-icon, button.btn-comprar iconify-icon, div.slide-card button.btn-jugar iconify-icon  {
+        font-size: 22px;
     }
-    button.btn-comprar iconify-icon{
+    button.btn-comprar iconify-icon, div.slide-card button.btn-comprar iconify-icon{
         font-size: 30px;
     }
     
@@ -1208,12 +1213,12 @@ button:active {
 
     section h2{
         margin-left: 90px;
-        font-size: 25px;
+        font-size: 22px;
         
     }
 
     header div.container-perfil {
-        margin-left: 800px;
+        margin-left: 610px;
         height: 230px;
         width: 270px;
     }
